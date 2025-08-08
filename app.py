@@ -5,7 +5,7 @@ import pandas as pd
 import os
 import csv
 
-st.set_page_config(page_title="Проверка фраз ФЛ", layout="centered")
+st.set_page_config(page_title="Проверка фраз ЮЛ", layout="centered")
 st.title("🤖 Проверка фраз")
 
 LOG_FILE = "query_log.csv"
