@@ -28,7 +28,11 @@ def log_query(query, semantic_count, keyword_count, status):
 
 @st.cache_data
 def get_data():
-    return load_all_excels()
+    df = load_all_excels()
+    model = get_model()
+    # рассчитываем эмбеддинги для полной таблицы и сохраняем в attrs
+    df.attrs['phrase_embs'] = model.encode(df['phrase_proc'].tolist(), convert_to_tensor=True)
+    return df
 
 df = get_data()
 
